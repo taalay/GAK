@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/kirpich"
+    tools:context=".activity.MainActivity"
+    android:id="@+id/drawer_layout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_above="@+id/filterBtn"
+        android:id="@+id/rv" />
+        <Button
+            android:id="@+id/filterBtn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/derevo"
+            android:onClick="resertFilter"
+            android:visibility="gone"
+            android:text="Сбросить фильтр"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@android:color/white"
+            android:background="@color/colorPrimary" />
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+    <ListView android:id="@+id/left_drawer"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="0dp"
+        android:background="#111"
+        />
+</android.support.v4.widget.DrawerLayout>
